@@ -7,6 +7,9 @@
 <div align="center"> <i>云崽QQ机器人的「异环」插件</i> </div>
 <br/>
 
+
+<div align="center"><img src="https://api.moedog.org/count/@ZyeAlex:NTE-plugin?theme=asoul"  /></div>
+
 ---
 
 
