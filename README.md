@@ -8,7 +8,7 @@
 <br/>
 
 
-<div align="center"><img src="https://api.moedog.org/count/@ZyeAlex:NTE-plugin?theme=booru-lisu"  /></div>
+<div align="center"><img src="https://api.moedog.org/count/@ZyeAlex:NTE-plugin?theme=asoul"  /></div>
 
 ---
 
