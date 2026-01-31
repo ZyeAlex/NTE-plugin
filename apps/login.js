@@ -1,0 +1,30 @@
+import render from '#render'
+import setting from '#setting'
+import plugin from '#plugin'
+
+
+export const Gacha = plugin({
+    name: '[异环助手]登录',
+    event: 'message',
+    priority: 100,
+    rule: [
+        {
+            reg: `^#登录$`,
+            fnc: login
+        },
+        {
+            reg: `^#扫码登录$`,
+            fnc: scanLogin
+        },
+    ]
+})
+
+
+async function login(e, reg) {
+    e.reply(reg)
+    e.reply('该功能暂未开发')
+}
+async function scanLogin(e, reg) {
+    e.reply(reg)
+    e.reply('该功能暂未开发')
+}

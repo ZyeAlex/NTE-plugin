@@ -1,0 +1,22 @@
+import render from '#render'
+import setting from '#setting'
+import plugin from '#plugin'
+
+
+export const Gacha = plugin({
+    name: '[异环助手]抽卡',
+    event: 'message',
+    priority: 100,
+    rule: [
+        {
+            reg: `^#?(模拟)?(抽卡)$`,
+            fnc: simulatedGacha
+        }
+    ]
+})
+
+
+async function simulatedGacha(e, reg) {
+    e.reply(reg)
+    e.reply('该功能暂未开发')
+}
