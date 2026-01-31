@@ -1,0 +1,38 @@
+import fs from 'node:fs'
+
+if (!global.segment) {
+  global.segment = (await import("oicq")).segment
+}
+
+if (!global.core) {
+  try {
+    global.core = (await import("oicq")).core
+  } catch (err) { }
+}
+
+const files = fs.readdirSync('./plugins/NTE-plugin/apps').filter(file => file.endsWith('.js'))
+let ret = []
+files.forEach((file) => {
+  ret.push(import(`./apps/${file}`))
+})
+ret = await Promise.allSettled(ret)
+
+logger.info('🍀🍀🍀🍀🍀🍀🍀🍀🍀\tNTE-plugin载入中...\t🍀🍀🍀🍀🍀🍀🍀🍀🍀')
+logger.info('\t仓库地址: https://gitee.com/N_T_E/NTE-plugin')
+logger.info('\t插 件 群: https://qm.qq.com/q/PqblpGQmiI')
+logger.info('\t插件群号: 155288872')
+logger.info('🍀🍀🍀🍀🍀🍀🍀🍀🍀\tNTE-plugin载入成功!\t🍀🍀🍀🍀🍀🍀🍀🍀🍀')
+
+let apps = {}
+
+for (let i in files) {
+  let name = files[i].replace('.js', '')
+  if (ret[i].status != 'fulfilled') {
+    logger.error(`载入插件错误：${logger.red(name)}`)
+    logger.error(ret[i].reason)
+    continue
+  }
+  apps[name] = ret[i].value[Object.keys(ret[i].value)[0]]
+}
+
+export { apps }

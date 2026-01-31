@@ -1,0 +1,18 @@
+# 前缀使用 # 符号
+helpGroup:
+- "group": "日常"
+  "list":
+  - "title": "#签到"
+    "icon": "1.png"
+    "desc": "每日签到并领取老婆"
+
+- "group": "管理功能"
+  "auth": "master"
+  "list":
+  - "title": "#异环更新"
+    "icon": "1.png"
+    "desc": "更新异环助手"
+  - "title": "#清除无效数据"
+    "icon": "1.png"
+    "desc": "清除退群成员数据、错误的签到数据等"
+
